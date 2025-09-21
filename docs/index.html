@@ -1,0 +1,925 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Build with AI - Setup Guide</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="docs"
+                  title="Build with AI - Setup Guide"
+                  environment="web"
+                  feedback-link="https://github.com/unstacked/unstacked-onboarding-workshop/issues">
+    
+      <google-codelab-step label="🚀 What You&#39;ll Build" duration="0">
+        <p>Get ready to create incredible AI applications using three powerful Google AI technologies:</p>
+<p><strong>🔥 Genkit (TypeScript)</strong> - Build conversational AI chatbots, content generators, and intelligent workflows</p>
+<ul>
+<li>Example: AI-powered story writer that creates personalized narratives</li>
+<li>Example: Smart customer service bot with context awareness</li>
+<li>Example: Content summarizer for documents and articles</li>
+</ul>
+<p><strong>🐍 Agent Development Kit (Python)</strong> - Create sophisticated AI agents and automation systems</p>
+<ul>
+<li>Example: Intelligent data analysis agent that generates insights from spreadsheets</li>
+<li>Example: Multi-step research assistant that gathers and synthesizes information</li>
+<li>Example: Smart scheduling agent that coordinates meetings across timezones</li>
+</ul>
+<p><strong>☁️ Google Cloud Vertex AI</strong> - Deploy and scale your AI models in the cloud</p>
+<ul>
+<li>Example: Image recognition system for product categorization</li>
+<li>Example: Real-time sentiment analysis for social media monitoring</li>
+<li>Example: Predictive analytics dashboard for business intelligence</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🎯 Ready to Start?" duration="0">
+        <p>This guide focuses on <strong>environment setup only</strong>. The actual coding tutorials, step-by-step projects, and hands-on codelabs will be provided during the workshop sessions.</p>
+<p><strong>Your goal</strong>: Complete this setup to be ready for an incredible learning experience!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="📅 Workshop Information" duration="0">
+        <p>For detailed schedule information and registration, visit: <a href="https://unstacked.dev/build-with-ai/" target="_blank"><strong>Build with AI Workshop</strong></a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="💻 System Requirements" duration="0">
+        <h2 is-upgraded>Minimum Requirements</h2>
+<ul>
+<li><strong>Operating System</strong>: Windows 10+ (ends October 14, 2025), macOS 12+ (Monterey or later), or Ubuntu 20.04+ LTS (Ubuntu 18.04 ended standard support June 2023)</li>
+<li><strong>RAM</strong>: 8GB minimum, 16GB recommended</li>
+<li><strong>Storage</strong>: 10GB free space</li>
+<li><strong>Internet</strong>: Stable broadband connection</li>
+<li><strong>Browser</strong>: Chrome, Firefox, Safari, or Edge (latest versions)</li>
+</ul>
+<h2 is-upgraded>Supported Operating Systems</h2>
+<p>This workshop provides setup instructions for:</p>
+<ul>
+<li>🪟 <strong>Windows 10/11</strong> (with WSL2 support)</li>
+<li>🍎 <strong>macOS</strong> (Intel and Apple Silicon)</li>
+<li>🐧 <strong>Linux</strong> (Ubuntu, Debian, CentOS, Fedora)</li>
+</ul>
+<h2 is-upgraded>💡 Less Powerful Machine? No Problem!</h2>
+<p><strong>Don&#39;t have a powerful machine or facing installation issues?</strong> We&#39;ve got you covered with cloud-based alternatives:</p>
+<ul>
+<li><strong>🔥 Firebase Studio</strong> - Cloud-based development environment with zero setup required<ul>
+<li>Perfect for Genkit development without local Node.js installation</li>
+<li>Access from any device with a browser</li>
+<li>Pre-configured templates ready to use</li>
+</ul>
+</li>
+<li><strong>💻 GitHub Codespaces</strong> - Full VS Code environment in the cloud<ul>
+<li>Works for all three platforms (Genkit, ADK, Vertex AI)</li>
+<li>Free tier includes 60 hours per month</li>
+<li>No local installation needed</li>
+</ul>
+</li>
+<li><strong>💬 Discord Community</strong> - Join our support server for:<ul>
+<li>Real-time help with setup issues</li>
+<li>Community troubleshooting</li>
+<li>Collaboration and project sharing</li>
+<li><a href="https://discord.gg/unstacked" target="_blank"><strong>Join our Discord</strong></a></li>
+</ul>
+</li>
+</ul>
+<p>These alternatives ensure everyone can participate regardless of their hardware limitations!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🚀 Quick Start" duration="0">
+        <ol type="1">
+<li>Choose your operating system section below</li>
+<li>Follow the setup instructions for each platform</li>
+<li>Verify your installation with the provided tests</li>
+<li>Join our community for support and discussions</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Genkit (TypeScript) Setup" duration="0">
+        <p><strong>What is Genkit?</strong> Google&#39;s AI application framework for TypeScript developers. Perfect for building conversational AI, content generators, and intelligent workflows.</p>
+<p><strong>What you&#39;ll build:</strong> AI-powered applications like chatbots, content creators, and smart automation tools.</p>
+<h2 is-upgraded>Prerequisites Checklist</h2>
+<p>Before starting, ensure you have:</p>
+<ul>
+<li>[ ] Administrator/sudo access on your machine</li>
+<li>[ ] A Google account for Firebase access</li>
+<li>[ ] A code editor (VS Code recommended)</li>
+<li>[ ] <strong>Gemini API key</strong> from <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> (free with quota limits)</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Operating System Specific Setup" duration="0">
+        <h2 is-upgraded>🪟 Windows Setup</h2>
+<h3 is-upgraded>Step 1: Install Node.js and npm</h3>
+<p><strong>Option A: Using Official Installer (Recommended)</strong></p>
+<pre><code language="language-bash" class="language-bash"># Download and install from https://nodejs.org/
+# Choose the LTS version (Long Term Support)
+# This will include npm automatically
+</code></pre>
+<p><strong>Option B: Using Chocolatey</strong></p>
+<pre><code language="language-powershell" class="language-powershell"># First install Chocolatey if you haven&#39;t already
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
+
+# Then install Node.js
+choco install nodejs
+</code></pre>
+<p><strong>Option C: Using Winget</strong></p>
+<pre><code language="language-cmd" class="language-cmd">winget install OpenJS.NodeJS
+</code></pre>
+<h3 is-upgraded>Step 2: Setup WSL2 (Optional but Recommended)</h3>
+<pre><code language="language-powershell" class="language-powershell"># Enable WSL and install Ubuntu
+wsl --install
+# Restart your computer when prompted
+# Follow Linux setup instructions within WSL
+</code></pre>
+<h3 is-upgraded>Step 3: Verify Installation</h3>
+<pre><code language="language-cmd" class="language-cmd">node --version
+npm --version
+# Should show version numbers (Node.js v20+ and npm 10+ recommended)
+</code></pre>
+<h2 is-upgraded>🍎 macOS Setup</h2>
+<h3 is-upgraded>Step 1: Install Homebrew (if not already installed)</h3>
+<pre><code language="language-bash" class="language-bash">/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+</code></pre>
+<h3 is-upgraded>Step 2: Install Node.js and npm</h3>
+<p><strong>Option A: Using Homebrew (Recommended)</strong></p>
+<pre><code language="language-bash" class="language-bash">brew install node
+</code></pre>
+<p><strong>Option B: Using Official Installer</strong></p>
+<pre><code language="language-bash" class="language-bash"># Download from https://nodejs.org/
+# Choose the macOS installer for your chip (Intel or Apple Silicon)
+</code></pre>
+<p><strong>Option C: Using Node Version Manager (for multiple Node versions)</strong></p>
+<pre><code language="language-bash" class="language-bash"># Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+# Restart terminal or run:
+source ~/.bashrc
+# Install latest LTS Node.js
+nvm install --lts
+nvm use --lts
+</code></pre>
+<h3 is-upgraded>Step 3: Verify Installation</h3>
+<pre><code language="language-bash" class="language-bash">node --version
+npm --version
+</code></pre>
+<h2 is-upgraded>🐧 Linux Setup</h2>
+<h3 is-upgraded>Ubuntu/Debian</h3>
+<p><strong>Option A: Using Package Manager</strong></p>
+<pre><code language="language-bash" class="language-bash"># Update package index
+sudo apt update
+
+# Install Node.js and npm
+sudo apt install nodejs npm
+
+# For latest version, use NodeSource repository
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+</code></pre>
+<p><strong>Option B: Using Snap</strong></p>
+<pre><code language="language-bash" class="language-bash">sudo snap install node --classic
+</code></pre>
+<h3 is-upgraded>CentOS/RHEL/Fedora</h3>
+<pre><code language="language-bash" class="language-bash"># For CentOS/RHEL
+sudo yum install nodejs npm
+
+# For Fedora
+sudo dnf install nodejs npm
+
+# Or use NodeSource for latest version
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+sudo yum install nodejs
+</code></pre>
+<h3 is-upgraded>Arch Linux</h3>
+<pre><code language="language-bash" class="language-bash">sudo pacman -S nodejs npm
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Genkit Installation and Setup" duration="0">
+        <h2 is-upgraded>Prerequisites</h2>
+<p>Before you begin, ensure your environment meets these requirements:</p>
+<ul>
+<li><strong>Node.js v20 or later</strong></li>
+<li><strong>npm</strong></li>
+</ul>
+<h2 is-upgraded>Step 1: Install Genkit CLI</h2>
+<pre><code language="language-bash" class="language-bash"># Install Genkit CLI globally
+npm install -g @genkit-ai/cli
+
+# Verify installation
+genkit --version
+</code></pre>
+<h2 is-upgraded>Step 2: Set Up Your Project</h2>
+<p>Create a new Node.js project and configure TypeScript:</p>
+<pre><code language="language-bash" class="language-bash"># Create a new directory for your project
+mkdir my-genkit-app
+cd my-genkit-app
+
+# Initialize npm project
+npm init -y
+
+# Set up source directory
+mkdir src
+touch src/index.ts
+
+# Install and configure TypeScript
+npm install -D typescript tsx
+npx tsc --init
+</code></pre>
+<h2 is-upgraded>Step 3: Install Genkit Packages</h2>
+<pre><code language="language-bash" class="language-bash"># Install core Genkit packages
+npm install genkit @genkit-ai/google-genai
+
+# Optional: Install additional model providers
+# npm install @genkit-ai/openai
+# npm install @genkit-ai/anthropic
+</code></pre>
+<h2 is-upgraded>Step 4: Configure Gemini API Key</h2>
+<p><strong>Get your free Gemini API key:</strong></p>
+<ol type="1">
+<li>Visit <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a></li>
+<li>Sign in with your Google account</li>
+<li>Click &#34;Create API Key&#34;</li>
+<li>Copy your API key (keep it secure!)</li>
+</ol>
+<p><strong>Set as environment variable:</strong></p>
+<pre><code language="language-bash" class="language-bash"># For current session
+export GEMINI_API_KEY=&lt;your-api-key&gt;
+
+# To make permanent, add to your shell profile:
+# ~/.bashrc, ~/.zshrc, or ~/.bash_profile
+echo &#39;export GEMINI_API_KEY=&lt;your-api-key&gt;&#39; &gt;&gt; ~/.bashrc
+</code></pre>
+<h2 is-upgraded>Step 5: Verify Your Setup</h2>
+<p>Test your Genkit installation:</p>
+<pre><code language="language-bash" class="language-bash"># Verify Genkit CLI is working
+genkit --version
+
+# Create a simple test project
+mkdir genkit-test &amp;&amp; cd genkit-test
+npm init -y
+npm install genkit @genkit-ai/google-genai
+
+# Start the Developer UI to confirm everything works
+genkit start
+</code></pre>
+<p>You should see:</p>
+<ul>
+<li>Genkit CLI version displayed</li>
+<li>Developer UI opens at <code>http://localhost:4000</code></li>
+<li>No installation errors</li>
+</ul>
+<p>🎉 <strong>Setup Complete!</strong> Your Genkit environment is ready for the workshop.</p>
+<h2 is-upgraded>What&#39;s Next?</h2>
+<p>With Genkit set up, you&#39;ll be able to build:</p>
+<ul>
+<li>AI story generators and content creators</li>
+<li>Intelligent chatbots with memory</li>
+<li>Document analysis and summarization tools</li>
+<li>Multi-step AI workflows and automation</li>
+</ul>
+<p>📚 <strong>Resources for Reference:</strong></p>
+<ul>
+<li><a href="https://genkit.dev/docs/get-started/" target="_blank">Official Genkit Documentation</a></li>
+<li><a href="https://genkit.dev/docs/devtools/" target="_blank">Genkit Developer Tools Guide</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🌟 Workshop Recommendation: Use Firebase Studio!" duration="0">
+        <p><strong>Skip the local setup complexity!</strong> For this workshop, we <strong>highly recommend using Firebase Studio</strong> instead of local development. It will save you time and let you focus on learning Genkit rather than troubleshooting environment issues.</p>
+<p><strong>🚀 Quick Start</strong>: <a href="https://studio.firebase.google.com/new/genkit" target="_blank">Create New Genkit Project</a> (one-click setup!)</p>
+<p><strong>👉 Or jump directly to the Firebase Studio section below for detailed instructions.</strong></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🔥 Firebase Studio Integration (Highly Recommended!)" duration="0">
+        <p><strong>Firebase Studio is the fastest and easiest way to get started with Genkit!</strong> It&#39;s a cloud-based development environment that eliminates the need for complex local setup. We <strong>strongly encourage</strong> all workshop participants to use Firebase Studio for the best learning experience.</p>
+<h2 is-upgraded>✨ Why Choose Firebase Studio?</h2>
+<ul>
+<li><strong>Zero Setup Time</strong> - No Node.js, npm, or local environment configuration needed</li>
+<li><strong>Pre-configured Templates</strong> - Genkit projects ready to use in seconds</li>
+<li><strong>Cloud-based Development</strong> - Access your projects from anywhere</li>
+<li><strong>Automatic Updates</strong> - Always running the latest Genkit version</li>
+<li><strong>Built-in Collaboration</strong> - Easy sharing and pair programming</li>
+<li><strong>No Installation Issues</strong> - Bypass common local setup problems</li>
+</ul>
+<h2 is-upgraded>🚀 Quick Start with Firebase Studio (Recommended Path)</h2>
+<p><strong>Option A: Create New Project from Template</strong> ⭐ <strong>Most Popular</strong></p>
+<ol type="1">
+<li><strong>Direct Link</strong>: Visit <a href="https://studio.firebase.google.com/new/genkit" target="_blank"><strong>Firebase Studio - New Genkit Project</strong></a></li>
+<li>Sign in with your Google account</li>
+<li>Your Genkit project will be automatically created and configured</li>
+<li><strong>You&#39;re ready to code!</strong> - Start building with Genkit immediately</li>
+</ol>
+<p><strong>Alternative</strong>: You can also visit <a href="https://firebase.studio/" target="_blank"><strong>Firebase Studio</strong></a> and manually select the Genkit template.</p>
+<p><strong>Option B: Import Existing Genkit Project</strong></p>
+<ol type="1">
+<li>Go to <a href="https://firebase.studio/" target="_blank"><strong>Firebase Studio</strong></a></li>
+<li>Choose <strong>&#34;Import Project&#34;</strong></li>
+<li>Connect your GitHub repository or upload your project files</li>
+<li>Firebase Studio automatically detects and configures your Genkit setup</li>
+<li>Start developing immediately!</li>
+</ol>
+<h2 is-upgraded>💡 Pro Tips for Firebase Studio</h2>
+<ul>
+<li><strong>Save time</strong> - Skip environment troubleshooting</li>
+<li><strong>Focus on learning Genkit</strong> - Not on setup issues</li>
+<li><strong>Share projects easily</strong> - Great for getting help and collaboration</li>
+<li><strong>Works on any device</strong> - Tablets, Chromebooks, any laptop with a browser</li>
+</ul>
+<h2 is-upgraded>Step 5: Start Development Server</h2>
+<pre><code language="language-bash" class="language-bash"># Start Genkit development server
+genkit start
+
+# This will open:
+# - Genkit Developer UI (usually http://localhost:4000)
+# - Your application server
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Your First Genkit Flow" duration="0">
+        <p>Create a simple AI flow to test your setup:</p>
+<pre><code language="language-typescript" class="language-typescript">// src/flows/hello.ts
+import { defineFlow } from &#39;@genkit-ai/flow&#39;;
+import { gemini15Flash } from &#39;@genkit-ai/googleai&#39;;
+
+export const helloFlow = defineFlow(
+  {
+    name: &#39;helloFlow&#39;,
+    inputSchema: z.object({
+      name: z.string(),
+    }),
+    outputSchema: z.string(),
+  },
+  async (input) =&gt; {
+    const response = await gemini15Flash.generate({
+      prompt: `Say hello to ${input.name} in a creative way!`,
+    });
+
+    return response.text();
+  },
+);
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Testing Your Setup" duration="0">
+        <h2 is-upgraded>Step 1: Start the Genkit Developer UI</h2>
+<pre><code language="language-bash" class="language-bash"># Start the Genkit UI with your application
+genkit start -- npx tsx --watch src/index.ts
+
+# Or automatically open in browser
+genkit start -o -- npx tsx --watch src/index.ts
+</code></pre>
+<h2 is-upgraded>Step 2: Access Genkit UI</h2>
+<ol type="1">
+<li>After running the command above, the Developer UI will automatically start</li>
+<li>Open your browser to <code>http://localhost:4000</code> (or it opens automatically with <code>-o</code> flag)</li>
+<li>You should see the Genkit Developer UI</li>
+<li>Navigate to Flows and test your flows interactively</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Genkit Setup Verification" duration="0">
+        <h2 is-upgraded>Essential Genkit Checks</h2>
+<ul>
+<li>[ ] Verify Node.js and npm are installed correctly</li>
+<li>[ ] Create and run a simple Genkit project</li>
+<li>[ ] Access Genkit UI successfully</li>
+<li>[ ] Test a simple flow with Gemini API</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Agent Development Kit (Python) Setup" duration="0">
+        <p><strong>What is ADK?</strong> Google&#39;s Agent Development Kit for Python - perfect for building sophisticated AI agents that can perform complex, multi-step tasks.</p>
+<p><strong>What you&#39;ll build:</strong> Intelligent agents that analyze data, conduct research, automate workflows, and make decisions based on complex reasoning.</p>
+<h2 is-upgraded>Prerequisites Checklist</h2>
+<ul>
+<li>[ ] Python 3.9+ installed (Python 3.8 reached end of life in October 2024)</li>
+<li>[ ] Basic understanding of Python virtual environments</li>
+<li>[ ] Code editor with Python support</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Operating System Specific Python Setup" duration="0">
+        <h2 is-upgraded>🪟 Windows Setup</h2>
+<h3 is-upgraded>Step 1: Install Python</h3>
+<p><strong>Option A: Microsoft Store (Recommended for Windows 11)</strong></p>
+<pre><code language="language-cmd" class="language-cmd"># Search for &#34;Python&#34; in Microsoft Store and install Python 3.9+
+</code></pre>
+<p><strong>Option B: Official Python Installer</strong></p>
+<pre><code language="language-cmd" class="language-cmd"># Download from https://python.org
+# ⚠️ IMPORTANT: Check &#34;Add Python to PATH&#34; during installation
+</code></pre>
+<p><strong>Option C: Using Chocolatey</strong></p>
+<pre><code language="language-powershell" class="language-powershell">choco install python
+</code></pre>
+<p><strong>Option D: Using Winget</strong></p>
+<pre><code language="language-cmd" class="language-cmd">winget install Python.Python.3.12
+</code></pre>
+<h3 is-upgraded>Step 2: Verify Installation</h3>
+<pre><code language="language-cmd" class="language-cmd">python --version
+pip --version
+# If &#34;python&#34; doesn&#39;t work, try &#34;python3&#34; or &#34;py&#34;
+</code></pre>
+<h3 is-upgraded>Step 3: Install Build Tools (if needed)</h3>
+<pre><code language="language-cmd" class="language-cmd"># Some packages require compilation
+# Install Microsoft C++ Build Tools
+# Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+</code></pre>
+<h2 is-upgraded>🍎 macOS Setup</h2>
+<h3 is-upgraded>Step 1: Install Python</h3>
+<p><strong>Option A: Using Homebrew (Recommended)</strong></p>
+<pre><code language="language-bash" class="language-bash"># Install Homebrew if you haven&#39;t already
+/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&#34;
+
+# Install Python
+brew install python@3.11
+</code></pre>
+<p><strong>Option B: Using pyenv (for multiple Python versions)</strong></p>
+<pre><code language="language-bash" class="language-bash"># Install pyenv
+brew install pyenv
+
+# Add to your shell configuration (~/.zshrc or ~/.bash_profile)
+echo &#39;export PATH=&#34;$HOME/.pyenv/bin:$PATH&#34;&#39; &gt;&gt; ~/.zshrc
+echo &#39;eval &#34;$(pyenv init -)&#34;&#39; &gt;&gt; ~/.zshrc
+source ~/.zshrc
+
+# Install Python
+pyenv install 3.11.5
+pyenv global 3.11.5
+</code></pre>
+<p><strong>Option C: Official Installer</strong></p>
+<pre><code language="language-bash" class="language-bash"># Download from https://python.org
+# Choose the macOS installer
+</code></pre>
+<h3 is-upgraded>Step 2: Install Xcode Command Line Tools</h3>
+<pre><code language="language-bash" class="language-bash">xcode-select --install
+</code></pre>
+<h2 is-upgraded>🐧 Linux Setup</h2>
+<h3 is-upgraded>Ubuntu/Debian</h3>
+<pre><code language="language-bash" class="language-bash"># Update package list
+sudo apt update
+
+# Install Python and pip
+sudo apt install python3 python3-pip python3-venv
+
+# Install build essentials
+sudo apt install build-essential python3-dev
+
+# Create symlink for python command (optional)
+sudo ln -s /usr/bin/python3 /usr/bin/python
+</code></pre>
+<h3 is-upgraded>CentOS/RHEL/Fedora</h3>
+<pre><code language="language-bash" class="language-bash"># For CentOS/RHEL 8+
+sudo dnf install python3 python3-pip
+
+# For older versions
+sudo yum install python3 python3-pip
+
+# For Fedora
+sudo dnf install python3 python3-pip python3-devel
+
+# Install development tools
+sudo dnf groupinstall &#34;Development Tools&#34;
+</code></pre>
+<h3 is-upgraded>Arch Linux</h3>
+<pre><code language="language-bash" class="language-bash">sudo pacman -S python python-pip
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Virtual Environment Setup" duration="0">
+        <h2 is-upgraded>Create Project Directory Structure</h2>
+<pre><code language="language-bash" class="language-bash">mkdir ai-agent-workspace
+cd ai-agent-workspace
+mkdir projects venvs
+</code></pre>
+<h2 is-upgraded>Method 1: Using venv (Built-in)</h2>
+<pre><code language="language-bash" class="language-bash"># Create virtual environment
+python -m venv venvs/adk-env
+
+# Activate virtual environment
+# On Windows:
+venvs\adk-env\Scripts\activate
+# On macOS/Linux:
+source venvs/adk-env/bin/activate
+
+# Verify activation (should show virtual env path)
+which python
+</code></pre>
+<h2 is-upgraded>Method 2: Using conda (Alternative)</h2>
+<pre><code language="language-bash" class="language-bash"># Install Miniconda first
+# Download from: https://docs.conda.io/en/latest/miniconda.html
+
+# Create environment
+conda create -n adk-env python=3.11
+conda activate adk-env
+</code></pre>
+<h2 is-upgraded>Method 3: Using virtualenv</h2>
+<pre><code language="language-bash" class="language-bash"># Install virtualenv
+pip install virtualenv
+
+# Create environment
+virtualenv venvs/adk-env
+
+# Activate (same as venv method above)
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ADK Setup Verification" duration="0">
+        <h2 is-upgraded>Step 1: Install ADK Packages</h2>
+<pre><code language="language-bash" class="language-bash"># Make sure your virtual environment is activated
+# Install Google&#39;s Agent Development Kit and related packages
+pip install google-genai-agents google-cloud-aiplatform
+pip install langchain openai anthropic
+pip install jupyter streamlit  # For development and demos
+
+# Verify installation
+python -c &#34;from google.genai import agents; print(&#39;ADK installed successfully!&#39;)&#34;
+</code></pre>
+<h2 is-upgraded>Step 2: Test Your Setup</h2>
+<pre><code language="language-bash" class="language-bash"># Quick installation test
+python -c &#34;
+from google.genai import agents
+print(&#39;✅ ADK is ready!&#39;)
+&#34;
+</code></pre>
+<p>🎉 <strong>Setup Complete!</strong> Your Python ADK environment is ready for the workshop.</p>
+<h2 is-upgraded>What&#39;s Next?</h2>
+<p>With ADK set up, you&#39;ll be able to build:</p>
+<ul>
+<li><strong>Multi-step research agents</strong> that gather and synthesize information</li>
+<li><strong>Data analysis assistants</strong> that process spreadsheets and generate insights</li>
+<li><strong>Task automation agents</strong> that handle complex workflows</li>
+<li><strong>Conversational AI systems</strong> with memory and context awareness</li>
+</ul>
+<h2 is-upgraded>Step 2: Project Structure</h2>
+<p>Your ADK project should look like this:</p>
+<pre><code>my-first-agent/
+├── agents/
+│   ├── __init__.py
+│   └── base_agent.py
+├── tools/
+│   ├── __init__.py
+│   └── basic_tools.py
+├── config/
+│   ├── settings.py
+│   └── prompts.py
+├── tests/
+│   └── test_agents.py
+├── requirements.txt
+├── .env.example
+└── main.py
+</code></pre>
+<h2 is-upgraded>Step 3: Environment Configuration</h2>
+<pre><code language="language-bash" class="language-bash"># Copy environment template
+cp .env.example .env
+
+# Edit .env file with your API keys
+# OPENAI_API_KEY=your_openai_key
+# ANTHROPIC_API_KEY=your_anthropic_key
+# GOOGLE_CLOUD_PROJECT=your_project_id
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Your First Agent" duration="0">
+        <h2 is-upgraded>Step 1: Create a Simple Agent</h2>
+<pre><code language="language-python" class="language-python"># agents/hello_agent.py
+from google.genai import agents
+from typing import Dict, Any
+from datetime import datetime
+
+class HelloAgent:
+    def __init__(self):
+        self.name = &#34;hello_agent&#34;
+        self.description = &#34;A friendly agent that greets users&#34;
+
+    def greet_user(self, name: str) -&gt; str:
+        &#34;&#34;&#34;Greet a user by name.&#34;&#34;&#34;
+        return f&#34;Hello, {name}! How can I help you today?&#34;
+
+    def get_time(self) -&gt; str:
+        &#34;&#34;&#34;Get the current time.&#34;&#34;&#34;
+        return datetime.now().strftime(&#34;%Y-%m-%d %H:%M:%S&#34;)
+
+    async def process(self, message: str) -&gt; str:
+        # Simple processing logic
+        if &#34;time&#34; in message.lower():
+            return self.get_time()
+        elif &#34;hello&#34; in message.lower():
+            return self.greet_user(&#34;there&#34;)
+        else:
+            return &#34;I can greet you or tell you the time. What would you like?&#34;
+</code></pre>
+<h2 is-upgraded>Step 2: Create Main Application</h2>
+<pre><code language="language-python" class="language-python"># main.py
+import asyncio
+from agents.hello_agent import HelloAgent
+
+async def main():
+    agent = HelloAgent()
+
+    print(&#34;Hello Agent is ready! Type &#39;quit&#39; to exit.&#34;)
+
+    while True:
+        user_input = input(&#34;\nYou: &#34;)
+
+        if user_input.lower() == &#39;quit&#39;:
+            break
+
+        response = await agent.process(user_input)
+        print(f&#34;Agent: {response}&#34;)
+
+if __name__ == &#34;__main__&#34;:
+    asyncio.run(main())
+</code></pre>
+<h2 is-upgraded>Step 3: Test Your Agent</h2>
+<pre><code language="language-bash" class="language-bash"># Run your agent
+python main.py
+
+# Try these inputs:
+# &#34;Hello&#34;
+# &#34;What time is it?&#34;
+# &#34;quit&#34;
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Development Tools Setup" duration="0">
+        <h2 is-upgraded>Step 1: Jupyter Notebook Integration</h2>
+<pre><code language="language-bash" class="language-bash"># Install Jupyter kernel for your virtual environment
+pip install ipykernel
+python -m ipykernel install --user --name=adk-env --display-name &#34;ADK Environment&#34;
+
+# Start Jupyter
+jupyter notebook
+</code></pre>
+<h2 is-upgraded>Step 2: IDE Configuration</h2>
+<p><strong>For VS Code:</strong></p>
+<pre><code language="language-bash" class="language-bash"># Install Python extension
+# Select interpreter: Ctrl+Shift+P -&gt; &#34;Python: Select Interpreter&#34;
+# Choose your virtual environment interpreter
+</code></pre>
+<p><strong>For PyCharm:</strong></p>
+<ul>
+<li>Go to Settings &gt; Project &gt; Python Interpreter</li>
+<li>Click gear icon &gt; Add &gt; Existing environment</li>
+<li>Select your virtual environment&#39;s python executable</li>
+</ul>
+<h2 is-upgraded>Step 3: Code Quality Setup</h2>
+<pre><code language="language-bash" class="language-bash"># Create setup.cfg for code quality tools
+cat &gt; setup.cfg &lt;&lt; EOF
+[flake8]
+max-line-length = 88
+extend-ignore = E203, W503
+
+[isort]
+profile = black
+multi_line_output = 3
+
+[tool:pytest]
+testpaths = tests
+python_files = test_*.py
+python_classes = Test*
+python_functions = test_*
+EOF
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="ADK Setup Verification" duration="0">
+        <h2 is-upgraded>Essential ADK Checks</h2>
+<ul>
+<li>[ ] Set up Python virtual environment</li>
+<li>[ ] Install ADK and dependencies</li>
+<li>[ ] Create and run the hello agent</li>
+<li>[ ] Test agent with basic tools</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Google Cloud Vertex AI Setup" duration="0">
+        <p><strong>What is Vertex AI?</strong> Google&#39;s enterprise-grade ML platform for deploying, managing, and scaling AI models in production.</p>
+<p><strong>What you&#39;ll build:</strong> Production-ready AI systems with model deployment, monitoring, and scaling capabilities.</p>
+<h2 is-upgraded>Prerequisites Checklist</h2>
+<ul>
+<li>[ ] Google account (required for Google Cloud)</li>
+<li>[ ] Credit card for GCP billing (workshop credits will be provided)</li>
+<li>[ ] Basic understanding of cloud concepts</li>
+</ul>
+<h2 is-upgraded>Google Cloud Setup</h2>
+<ol type="1">
+<li><strong>Create Account</strong>: Visit <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a> and sign in</li>
+<li><strong>Create Project</strong>: Click &#34;New Project&#34; and name it (e.g., &#34;Vertex AI Workshop&#34;)</li>
+<li><strong>Enable Billing</strong>: Required for Vertex AI (workshop credits provided)</li>
+<li><strong>Install CLI</strong>: Install Google Cloud CLI for your OS</li>
+<li><strong>Authenticate</strong>: Run <code>gcloud init</code> and <code>gcloud auth application-default login</code></li>
+<li><strong>Enable APIs</strong>: Enable Vertex AI, Storage, and Compute APIs</li>
+<li><strong>Install SDK</strong>: <code>pip install google-cloud-aiplatform</code></li>
+</ol>
+<h2 is-upgraded>Quick Verification</h2>
+<p>Test your setup:</p>
+<pre><code language="language-bash" class="language-bash">gcloud config list
+gcloud services list --enabled
+python -c &#34;from google.cloud import aiplatform; print(&#39;✅ Vertex AI SDK installed&#39;)&#34;
+</code></pre>
+<h2 is-upgraded>What You&#39;ll Build</h2>
+<p>With Vertex AI set up, you&#39;ll be able to create production ML systems:</p>
+<ul>
+<li><strong>Custom Model Training</strong>: Train and deploy your own ML models on real data</li>
+<li><strong>AutoML Solutions</strong>: Use Google&#39;s automated machine learning for quick model development</li>
+<li><strong>MLOps Pipelines</strong>: Automated training, deployment, and monitoring workflows</li>
+<li><strong>Model Endpoints</strong>: Real-time prediction APIs with auto-scaling</li>
+<li><strong>Integration</strong>: Connect Vertex AI with your Genkit and ADK applications for complete AI solutions</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Platform Integration Overview" duration="0">
+        <p>Once all three platforms are set up, you can combine them to build complete AI applications. This is where everything comes together to create production-ready systems.</p>
+<h2 is-upgraded>Integration Possibilities</h2>
+<p><strong>Multi-Platform Architecture:</strong></p>
+<ul>
+<li>Connect Genkit frontend with ADK backend</li>
+<li>Add Vertex AI custom models to your agents</li>
+<li>Build real-time AI workflows</li>
+</ul>
+<p><strong>Production Deployment:</strong></p>
+<ul>
+<li>Deploy complete AI applications</li>
+<li>Implement monitoring and scaling</li>
+<li>Create robust, scalable systems</li>
+</ul>
+<h2 is-upgraded>Project Examples</h2>
+<ul>
+<li><strong>AI Customer Service</strong>: Genkit chat UI → ADK conversation agent → Vertex AI models</li>
+<li><strong>Content Pipeline</strong>: Automated content generation and analysis system</li>
+<li><strong>Smart Dashboard</strong>: Real-time data analysis with AI insights</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Setup Completion Checklist" duration="0">
+        <p>Before you can build integrated applications, ensure you have:</p>
+<h2 is-upgraded>Genkit Setup ✅</h2>
+<ul>
+<li>[x] Node.js and TypeScript environment</li>
+<li>[x] Firebase project configured</li>
+<li>[x] Basic Genkit application running</li>
+<li>[x] Genkit CLI working properly</li>
+</ul>
+<h2 is-upgraded>ADK Setup ✅</h2>
+<ul>
+<li>[x] Python virtual environment</li>
+<li>[x] Agent Development Kit installed</li>
+<li>[x] Simple agent created and tested</li>
+<li>[x] Required Python packages installed</li>
+</ul>
+<h2 is-upgraded>Vertex AI Setup ✅</h2>
+<ul>
+<li>[x] Google Cloud project and billing</li>
+<li>[x] Vertex AI APIs enabled</li>
+<li>[x] CLI and SDK authentication working</li>
+<li>[x] Project permissions configured</li>
+</ul>
+<h2 is-upgraded>Integration Readiness ✅</h2>
+<ul>
+<li>[x] All three platforms working independently</li>
+<li>[x] Basic understanding of each framework</li>
+<li>[x] Development environment fully configured</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Next Steps" duration="0">
+        <p><strong>Congratulations!</strong> You&#39;re now ready to start building production AI applications.</p>
+<p>With your environment configured, you can:</p>
+<ul>
+<li><strong>Connect Everything</strong>: Integrate Genkit, ADK, and Vertex AI into unified applications</li>
+<li><strong>Deploy at Scale</strong>: Launch your AI systems to production environments</li>
+<li><strong>Monitor &amp; Optimize</strong>: Ensure your applications perform reliably in the real world</li>
+</ul>
+<h2 is-upgraded>Ready to Begin?</h2>
+<p>With your development environment fully configured, you&#39;re prepared to:</p>
+<ol type="1">
+<li><strong>Build Real Applications</strong>: Create AI solutions using all three platforms</li>
+<li><strong>Deploy to Production</strong>: Launch your applications with confidence</li>
+<li><strong>Join the Community</strong>: Connect with other developers building the future of AI</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Troubleshooting Setup Issues" duration="0">
+        <h2 is-upgraded>Quick Fixes for Common Problems</h2>
+<p><strong>Genkit Issues:</strong></p>
+<ul>
+<li>Command not found? → <code>npm install -g @genkit-ai/cli</code></li>
+<li>Firebase errors? → <code>firebase login</code> and <code>firebase use --add</code></li>
+<li>TypeScript errors? → Ensure Node.js 18+ and <code>npm install</code></li>
+</ul>
+<p><strong>ADK Issues:</strong></p>
+<ul>
+<li>Import errors? → Activate virtual environment: <code>source venv/bin/activate</code></li>
+<li>Package missing? → <code>pip install google-genai-agents</code></li>
+<li>Python version? → Ensure Python 3.9+</li>
+</ul>
+<p><strong>Vertex AI Issues:</strong></p>
+<ul>
+<li>Authentication errors? → <code>gcloud auth application-default login</code></li>
+<li>API not enabled? → <code>gcloud services enable aiplatform.googleapis.com</code></li>
+<li>Project issues? → Verify project ID and billing enabled</li>
+</ul>
+<h2 is-upgraded>Getting Help</h2>
+<ul>
+<li><strong>💬 Discord Community</strong>: <a href="https://discord.gg/unstacked" target="_blank"><strong>Join our Discord server</strong></a> for: <ul>
+<li>Real-time help with setup issues</li>
+<li>Community troubleshooting and support</li>
+<li>Project collaboration and code sharing</li>
+<li>Direct access to instructors and mentors</li>
+</ul>
+</li>
+<li><strong>📚 Office Hours</strong>: Regular Q&amp;A sessions with instructors</li>
+<li><strong>📖 Documentation</strong>: Each platform&#39;s official docs for deep troubleshooting</li>
+</ul>
+<p><strong>Congratulations!</strong> You&#39;re ready to start building the future of AI applications!</p>
+<p>With all three platforms properly configured, you now have the foundation to build sophisticated AI applications that leverage the best of Google&#39;s AI technologies.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Continue Your Journey" duration="0">
+        <ol type="1">
+<li><strong>Start Building</strong>: Use your configured environment to create amazing AI applications</li>
+<li><strong>Join the Community</strong>: Connect with other developers and continue learning</li>
+<li><strong>Share Your Work</strong>: Contribute back and help others in the community</li>
+<li><strong>Keep Learning</strong>: Explore advanced topics like MLOps, AI safety, and model optimization</li>
+<li><strong>Get Certified</strong>: Consider Google Cloud AI/ML certifications to validate your skills</li>
+</ol>
+<p>Happy coding! 🚀</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

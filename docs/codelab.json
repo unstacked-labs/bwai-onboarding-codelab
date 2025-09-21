@@ -1,0 +1,28 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-09-21T22:08:11+03:00",
+  "id": "docs",
+  "duration": 0,
+  "title": "Build with AI - Setup Guide",
+  "summary": "Complete setup guide for building modern AI applications with Google’s cutting-edge technologies",
+  "source": "README.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "ai",
+    "development",
+    "googlecloud",
+    "genkit",
+    "agentdevelopmentkit"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/unstacked/unstacked-onboarding-workshop/issues",
+  "url": "docs"
+}
